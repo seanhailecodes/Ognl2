@@ -1,0 +1,2 @@
+#groupString = "(zpa_users*|GG-WebProxy*)", #groupCnOnly = new java.util.ArrayList(), #groups = #this.get("memberOf")!=null ? #this.get("memberOf").getValues() : {}, #groups.{ #group = #this, #group = new javax.naming.ldap.LdapName(#group), #cn = #group.getRdn(#group.size() - 1).getValue().toString(), #cn.matches("(?i).*"+#groupString+".*") ? #groupCnOnly.add(#cn) : null }, #groupCnOnly != null ? new org.sourceid.saml20.adapter.attribute.AttributeValue(#groupCnOnly) : null (Expression) (Expression)
+
